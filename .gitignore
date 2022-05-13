@@ -1,3 +1,4 @@
 node_modules
 .env
 notlar.txt
+yarn.lock
