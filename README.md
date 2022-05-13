@@ -1,7 +1,7 @@
 
 # Booking App
 
-reactJS kullanılarak yapılmış Booking uygulamasının kaynak kodlarını içerir.
+reactJS kullanılarak yapılmış Booking uygulamasının kaynak kodlarını içerir..
 
 
 
