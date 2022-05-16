@@ -8,6 +8,7 @@ import roomsRoute from './routes/rooms.js'
 import cookieParser from 'cookie-parser';
 const app = express();
 dotenv.config();
+import cors from 'cors';
 
 const connect = async () => {
     try {
@@ -26,6 +27,7 @@ mongoose.connection.on("disconnected", () => {
 
 //middlewares
 app.use(cookieParser())
+app.use(cors())
 app.use(express.json());
 
 
