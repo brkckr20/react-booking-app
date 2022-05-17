@@ -18,7 +18,7 @@ const useFetch = (url) => {
             setLoading(false);
         };
         fetchData();
-    }, [url]);
+    }, [url]); //url değiştiğinde fetch işlemi, otel fiyat filtrelemesinde kullanıldı
     const reFetch = async () => {
         setLoading(true);
         try {
