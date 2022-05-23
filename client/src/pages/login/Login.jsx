@@ -11,7 +11,7 @@ const Login = () => {
         password: undefined,
     });
 
-    const {  loading, error, dispatch } = useContext(AuthContext)
+    const { loading, error, dispatch } = useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -26,7 +26,7 @@ const Login = () => {
         })
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, credentials);
-            dispatch({ type: "LOGIN_SUCCESS", payload: res.data },)
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details },)
             navigate("/")
         } catch (error) {
             dispatch({ type: "LOGIN_FAILURE", payload: error.response.data })

@@ -8,8 +8,7 @@ export const register = async (req, res, next) => {
     const hash = bcrypt.hashSync(req.body.password, salt);
     try {
         const newUser = new User({
-            username: req.body.username,
-            email: req.body.email,
+            ...req.body,
             password: hash,
             isAdmin: false
         })
@@ -36,7 +35,7 @@ export const login = async (req, res, next) => {
         const { password, isAdmin, ...otherDetails } = user._doc; //parola ve admin durumunun gönderilmemesi için ayrıştırıldı.
         res.cookie("access_token", token, {
             httpOnly: true
-        }).status(200).json({ ...otherDetails });
+        }).status(200).json({ details: { ...otherDetails }, isAdmin });
     } catch (error) {
         next(error);
     }

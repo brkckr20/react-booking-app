@@ -22,6 +22,7 @@ export const verifyUser = (req, res, next) => {
             if (err) return next(createError(403, "You are not authorized"))
         }
     })
+    console.log(req.headers)
 }
 
 export const verifyAdmin = (req, res, next) => {
