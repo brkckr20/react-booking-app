@@ -43,7 +43,7 @@ export const hotelColumns = [
   {
     field: "name",
     headerName: "Name",
-    width: 150,
+    width: 300,
   },
   {
     field: "type",

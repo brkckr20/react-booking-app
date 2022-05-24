@@ -13,7 +13,7 @@ const Datatable = ({columns}) => {
   const [list, setList] = useState([]);
 
   const { data, loading, error } = useFetch(`${process.env.REACT_APP_API_URL}/${path}`)
-//  console.log("datatable", data)
+  console.log("datatable", path)
 
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Datatable = ({columns}) => {
       </div>
       <DataGrid
         className="datagrid"
-        rows={list}
+        rows={data}
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
